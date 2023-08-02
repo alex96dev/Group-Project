@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    line-height: 30px;
+    font-family: Ayuthaya;
+}
+.spielerOne{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 40%;
+    margin: 10px 0 0;
+    border: 4px Solid;
+    border-radius: 10%;
+    background-color: #646cff;
+}
