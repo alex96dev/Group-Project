@@ -14,14 +14,8 @@ public class Controller {
 
     private final Service s;
 
-
     @GetMapping
     public List<PokemonComplete> getAllPokemons() {
         return s.allPokemons();
     }
-
-    /*@GetMapping("/{id}")
-    public Pokemon getPokemonDetailsById(@PathVariable String id){
-        return s.getPokemonDetailsById(id);
-    }*/
 }
