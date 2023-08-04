@@ -16,7 +16,12 @@ public class Controller {
 
 
     @GetMapping
-    public List<Pokemon> getAllPokemons() {
+    public List<PokemonComplete> getAllPokemons() {
         return s.allPokemons();
     }
+
+    /*@GetMapping("/{id}")
+    public Pokemon getPokemonDetailsById(@PathVariable String id){
+        return s.getPokemonDetailsById(id);
+    }*/
 }
