@@ -2,13 +2,16 @@ package de.neuefische.backend;
 
 import org.springframework.web.reactive.function.client.WebClient;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
 @org.springframework.stereotype.Service
 
 public class Service {
+
     public List<PokemonComplete> allPokemons() {
         WebClient PokemonWebClient = WebClient.create("https://pokeapi.co/api/v2");
 
@@ -65,5 +68,6 @@ public class Service {
         return pokemon;
 
     }*/
+
 
 }
