@@ -4,6 +4,6 @@ LABEL authors="alexanderstracke"
 
 EXPOSE 8080
 
-ADD backend/target/pokemon.jar pokemon.jar
+ADD backend/target/pokemon_app.jar pokemon_app.jar
 
-CMD [ "sh", "-c", "java -jar /pokemon.jar"]
+CMD [ "sh", "-c", "java -jar /pokemon_app.jar"]

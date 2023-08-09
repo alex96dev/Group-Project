@@ -51,10 +51,5 @@ public class Service {
         return false;
     }
 
-    public boolean checkPlayerReached8Cards(){
-        if(){
-
-        }
-    }
 
 }
