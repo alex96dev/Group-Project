@@ -16,8 +16,9 @@ public class Service {
     public List<PokemonComplete> allPokemons() {
         WebClient PokemonWebClient = WebClient.create("https://pokeapi.co/api/v2");
 
-
         Random random = new Random();
+
+        finalPokemons.clear();
 
         for (int i = 0; i < 2; i++) {
             int n = random.nextInt(1010);
@@ -39,6 +40,7 @@ public class Service {
 
         finalPokemons.get(0).setPower(r1);
         finalPokemons.get(1).setPower(r2);
+
 
         return finalPokemons;
 
