@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 @org.springframework.stereotype.Service
 
 public class Service {
