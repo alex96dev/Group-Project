@@ -18,4 +18,11 @@ public class Controller {
     public List<PokemonComplete> getAllPokemons() {
         return s.allPokemons();
     }
+
+    @GetMapping("/calc")
+    public boolean getCalc(){
+        return s.getWinnerOfATrickAsBoolean();
+    }
+
 }
+

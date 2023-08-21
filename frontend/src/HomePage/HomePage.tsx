@@ -1,6 +1,8 @@
 import axios from "axios";
 import {useState} from "react";
 
+const MAX_POINTS=5;
+
 export default function HomePage() {
     const [name1, setName1] = useState("")
     const [image1, setImage1] = useState("")
@@ -8,6 +10,9 @@ export default function HomePage() {
     const [name2, setName2] = useState("")
     const [image2, setImage2] = useState("")
     const [power2, setPower2] = useState("")
+    const [result, setResult] = useState("")
+    const [score1, setScore1] = useState(0)
+    const [score2, setScore2] = useState(0)
 
     function Generate2Cards() {
         axios({
@@ -22,6 +27,23 @@ export default function HomePage() {
                 setImage2((response.data[1].sprites.front_default));
                 setPower2((response.data[1].power));
             });
+    }
+
+    function Fight() {
+        if(MAX_POINTS!=score1 && MAX_POINTS!=score2) {
+            if (power1 > power2) {
+                setResult("The Winner ist " + name1);
+                setScore1(score1 + 1);
+            } else {
+                setResult("The Winner ist " + name2);
+                setScore2(score2 + 1);
+            }
+        }
+    }
+
+    function Reset() {
+        setScore1(0)
+        setScore2(0)
     }
 
     return (
@@ -42,7 +64,19 @@ export default function HomePage() {
                     <p className={"row3"}>power: {power2}</p>
                 </li>
             </div>
+            <div className={"result"}>
+                <p>Result: {result}</p>
+            </div>
+            <div className={"score_1"}>
+                <p>Score Player 1: {score1}</p>
+            </div>
+            <div className={"score_2"}>
+                <p>Score Player 2: {score2}</p>
+            </div>
             <button onClick={Generate2Cards}>Generate 2 Cards</button>
+            <button onClick={Fight}>Fight</button>
+            <button onClick={Reset}>Reset Score</button>
+            <p>{score1==MAX_POINTS || score2==MAX_POINTS ? "Game Over": ""}</p>
         </div>
 
     )
